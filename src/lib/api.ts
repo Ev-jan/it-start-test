@@ -36,10 +36,9 @@ export const deleteSeminar = async (id: ISeminar["id"]) => {
     const res = await axios.delete(`${API_URL}/${id}`);
     console.log("Deleted seminar", res);
     if (res.status !== 200) toast.error("Не удалось удалить семинар");
-    else toast.success("Success!");
   } catch (err) {
     console.error("Failed to delete seminar:", err);
-    toast.error("Ошибка.");
+    toast.error("Непредвиденная ошибка");
   }
 };
 
@@ -49,7 +48,7 @@ export const createSeminar = async (seminar: Partial<ISeminar>) => {
     if (res.status !== 201) toast.error("Ошибка. Не удалось создать семинар");
   } catch (err) {
     console.error("Failed to create seminar:", err);
-    toast.error("Ошибка.");
+    toast.error("Непредвиденная ошибка");
   }
 };
 
@@ -62,7 +61,7 @@ export const updateSeminar = async (
     console.log("Updated seminar", res);
     if (res.status !== 200) toast.error("Ошибка. Не удалось обновить семинар");
   } catch (err) {
-    toast.error("Ошибка.");
+    toast.error("Непредвиденная ошибка");
     console.error(`Failed to update seminar ${id}:`, err);
   }
 };
