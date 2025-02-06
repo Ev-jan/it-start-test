@@ -31,6 +31,8 @@ export const useSeminar = (id: ISeminar["id"] | undefined) => {
   };
 };
 
+// define api methods for CRUD operations
+
 export const deleteSeminar = async (id: ISeminar["id"]) => {
   try {
     const res = await axios.delete(`${API_URL}/${id}`);
