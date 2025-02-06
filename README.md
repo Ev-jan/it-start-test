@@ -1,50 +1,59 @@
-# React + TypeScript + Vite
+# РЕШЕНИЕ ЗАДАНИЯ ДЛЯ Junior React Developer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## ОПИСАНИЕ ЗАДАНИЯ
 
-Currently, two official plugins are available:
+Необходимо развернуть локально `json-server` и загрузить в него данные **seminars**. Используйте любые удобные технологии, но обязательно с использованием React для реализации следующих функций:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Запрос данных**
 
-## Expanding the ESLint configuration
+   - Запросите данные с семинарами из `json-server`.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+2. **Отрисовка списка семинаров**
 
-- Configure the top-level `parserOptions` property like this:
+   - Отобразите список семинаров на странице.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+3. **Удаление семинара**
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+   - Реализуйте кнопку удаления семинара, которая при клике открывает окно подтверждения.
+   - При подтверждении удаления отправьте `DELETE` запрос на сервер.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+4. **Редактирование семинара**
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+   - Реализуйте кнопку редактирования семинара.
+   - Редактирование должно происходить в модальном окне.
+
+5. **Размещение на GitHub**
+   - Залейте проект на GitHub и пришлите ссылку.
+   - **Важно:** `json-server` должен находиться в том же репозитории, что и приложение.
+
+### Дополнительные рекомендации
+
+- Используйте современные подходы (например, React Hooks, функциональные компоненты).
+- Обратите внимание на обработку ошибок и состояния загрузки.
+- Добавьте комментарии в код для пояснения ключевых моментов реализации.
+
+## ПОЯСНЕНИЯ К РЕШЕНИЮ
+
+**В приложении использован следующий стек технологий:**
+
+- React + Vite
+- Tailwind для стилизации компонентов + некоторые кмпоненты из библиотеки ShadCN
+- react-hook-form
+- Axios и SWR для выполнения запросов и ревалидации
+
+**Запуск приложения**
+
+Для запуска приложения необходимо:
+
+1.  Клонировать репозиторий:
+    `git clone https://github.com/yourusername/your-repository.git`
+
+2.  Установить зависимости:
+
+`npm install`
+
+3.  Для запуска серверной и фронтенд-части нужно выполнить команду:
+
+`npm run dev`
+
+Скрипт одновременно запустит json-server и приложение на Vite. Проект будет доступен по адресу `http://localhost:5173`
