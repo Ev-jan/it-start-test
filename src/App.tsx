@@ -1,4 +1,3 @@
-import "react-datepicker/dist/react-datepicker.css";
 import { Modal } from './components/Modal';
 import { DeleteForm } from './components/DeleteForm';
 import { useState } from 'react';
